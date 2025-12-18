@@ -35,7 +35,7 @@ A função realiza as seguintes etapas:
 
 | Opção | Tipo | Default | Descrição |
 | :--- | :--- | :--- | :--- |
-| `selector` | `string` | `[data-theme="..."][data-mode="..."]` | Define o seletor CSS que envolverá as variáveis. |
+| `selector` | `string` | Baseado em `theme.meta` | Define o seletor CSS (padrão: `[data-theme="{meta.name}"][data-mode="{meta.mode}"]`). |
 | `prefix` | `string` | `"--ds-"` | Prefixo das variáveis CSS. |
 | `includePrimitives`| `boolean`| `true` | Se deve exportar também os tokens primitivos (ex: `--ds-space-4`). |
 | `includeSemantic` | `boolean`| `true` | Se deve exportar tokens semânticos (ex: `--ds-color-text-primary`). |

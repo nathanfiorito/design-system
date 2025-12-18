@@ -62,13 +62,6 @@ export function flattenToVars(
 
         // Ensure the prefix starts with '--'
         const safePrefix = prefix.startsWith("--") ? prefix : `--${prefix}`;
-        // If prefix doesn't end with hyphen and suffix doesn't start with one, add it?
-        // Actually the requirement says prefix default "--ds-". 
-        // Usually prefix includes the trailing dash if needed.
-        // Let's assume the user provides a prefix like "--ds-".
-        // But let's be safe: if prefix ends in -, and suffix starts with -, avoid double?
-        // The previous implementation of kebabCase handles internal dashes.
-        // Let's just concatenate.
 
         const varName = `${safePrefix}${suffix}`;
 
@@ -106,11 +99,6 @@ export function mergeVars(
     opts: { prefer?: "A" | "B" } = { prefer: "B" }
 ): Array<[string, string]> {
     const map = new Map<string, string>();
-
-    // Helper to add vars to map according to preference strategy
-    // But wait, "prefer B" means if A has varX and B has varX, B wins.
-    // So we can just add A then add B (for prefer B).
-    // Or B then A (for prefer A).
 
     const sequence = opts.prefer === 'A'
         ? [varsB, varsA]

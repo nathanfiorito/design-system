@@ -126,3 +126,35 @@ export function ThemeToggle() {
    * Não acessa `window` no render principal.
    * Prioriza props iniciais no servidor.
    * Resolve `system` e `localStorage` apenas no cliente (useEffect), evitando FOUC (Flash of Unstyled Content) através de valores padrão sensatos.
+129:
+130: ## Guia de Uso Rápido
+131: 
+132: ### Exemplo 1: Automático (System Default)
+133: 
+134: Configuração ideal para a maioria das apps. Respeita a preferência do sistema operacional e salva alterações manuais.
+135: 
+136: ```tsx
+137: <ThemeProvider mode="system" persist />
+138: ```
+139: 
+140: ### Exemplo 2: Forçado (Dark Mode)
+141: 
+142: Útil para apps que são "dark only" ou para forçar um tema específico independentemente do usuário.
+143: 
+144: ```tsx
+145: <ThemeProvider mode="dark" persist />
+146: ```
+147: 
+148: ### Exemplo 3: Tema por App + Persistência Customizada
+149: 
+150: Para quando você tem múltiplos temas (ex: one-label apps) e quer isolar a persistência.
+151: 
+152: ```tsx
+153: <ThemeProvider
+154:   theme={{ light: appLight, dark: appDark }}
+155:   activeThemeName="app-delivery"
+156:   mode="system"
+157:   persist
+158:   storageKey="myapp.theme"
+159: />
+160: ```

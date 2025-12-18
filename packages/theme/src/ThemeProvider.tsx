@@ -106,3 +106,21 @@ export function ThemeProvider({
         </ThemeContext.Provider>
     );
 }
+
+/**
+ * MINI GUIA DE USO
+ *
+ * Exemplo 1: Automático (system default)
+ * <ThemeProvider mode="system" persist />
+ *
+ * Exemplo 2: Forçar Dark Mode
+ * <ThemeProvider mode="dark" persist />
+ *
+ * Exemplo 3: Tema por App + Persistência
+ * <ThemeProvider
+ *   theme={{ light: appLight, dark: appDark }}
+ *   mode="system"
+ *   persist
+ *   storageKey="myapp.theme"
+ * />
+ */
