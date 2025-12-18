@@ -97,6 +97,45 @@ const styles = {
 
 > **Dica:** Para React Native, recomenda-se criar um wrapper context (ThemeProvider) que forneça o tema ativo.
 
+### 3. Helper Type-Safe (Web/CSS)
+
+Para evitar erros de digitação ao usar strings manuais (`var(--ds-...)`), o pacote oferece helpers tipados com autocomplete.
+
+Importe de `@ds/tokens/css`:
+
+```typescript
+import { ds, token } from "@ds/tokens/css";
+```
+
+#### Objeto Proxy (`ds`)
+
+A forma mais recomendada. Mapeia a estrutura do tema para as variáveis CSS correspondentes.
+
+```typescript
+// Retorna "var(--ds-color-bg-surface)"
+const bg = ds.color.bg.surface;
+
+// Retorna "var(--ds-space-16)"
+const padding = ds.space[16];
+
+// Retorna "var(--ds-font-family-sans)"
+const font = ds.font.family.sans;
+```
+
+#### Função Helper (`token`)
+
+Útil para casos dinâmicos ou onde você prefere a sintaxe de string path.
+
+```typescript
+// Retorna "var(--ds-color-text-primary)"
+token("color.text.primary");
+
+// Opções
+token("color.bg.surface", { prefix: "--custom-" });
+```
+
+Ambos os métodos são totalmente tipados e oferecem IntelliSense para todos os tokens disponíveis.
+
 ## Arquitetura do Pacote
 
 ### Estrutura de Pastas e Distribuição
