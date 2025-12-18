@@ -7,7 +7,7 @@
         "configs/*"
     ],
     "scripts": {
-        "build": "npm run build --workspaces",
+        "build": "npm run build -w @ds/tokens && npm run build -w @ds/theme && npm run build -w @ds/ui",
         "test": "npm run test --workspaces"
     },
     "devDependencies": {
