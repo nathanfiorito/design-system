@@ -5,7 +5,7 @@ O pacote `@ds/theme` é responsável por gerenciar a aplicação de temas, contr
 ## Instalação
 
 ```bash
-pnpm add @ds/theme @ds/tokens
+npm install @ds/theme @ds/tokens
 ```
 
 > **Nota Técnica:** O pacote expõe seus artefatos via `exports` no `package.json`. Certifique-se de que seu bundler suporta resolução moderna (Node 16+ resolution).

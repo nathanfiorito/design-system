@@ -1,0 +1,17 @@
+{
+    "name": "design-system",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*",
+        "configs/*"
+    ],
+    "scripts": {
+        "build": "npm run build --workspaces",
+        "test": "npm run test --workspaces"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "prettier": "latest"
+    }
+}

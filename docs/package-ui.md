@@ -37,7 +37,7 @@ O módulo de foundations visa normalizar o comportamento dos navegadores e aplic
 ```bash
 npm install @ds/ui
 # ou
-pnpm add @ds/ui
+npm install @ds/ui
 ```
 
 ### Importando as Foundations

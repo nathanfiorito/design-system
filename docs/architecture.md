@@ -46,7 +46,7 @@ Documento principal do Design System, descrevendo visão, objetivos, princípios
 
 ### `package.json`
 
-Configuração base do monorepo (workspaces, scripts globais, versionamento).
+Configuração base do monorepo (NPM Workspaces, scripts globais, versionamento).
 
 ### `tsconfig.base.json`
 

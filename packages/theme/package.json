@@ -18,7 +18,7 @@
     "private": true,
     "dependencies": {
         "react": "^18.2.0",
-        "@ds/tokens": "workspace:*"
+        "@ds/tokens": "*"
     },
     "devDependencies": {
         "typescript": "^5.0.0",

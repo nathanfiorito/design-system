@@ -141,7 +141,7 @@ Sem necessidade de fork ou duplicação do código base.
 * React + TypeScript
 * CSS Variables e/ou Tailwind
 * Storybook para documentação
-* Monorepo (opcional)
+* Monorepo (NPM Workspaces)
 
 ---
 
