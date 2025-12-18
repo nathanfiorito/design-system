@@ -27,16 +27,13 @@ jobs:
 
       - run: npm ci
 
-      # (Opcional) se seus packages precisam de build antes do Storybook:
-      # - run: npm -w packages/tokens run build
-      # - run: npm -w packages/theme run build
-      # - run: npm -w packages/ui run build
+      # Build do Storybook no workspace apps/docs
+      - run: npm -w apps/docs run build-storybook
 
-      - run: npm -w apps/storybook run build-storybook
-
+      # Storybook gera storybook-static por padrão
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/storybook/storybook-static
+          path: apps/docs/storybook-static
 
   deploy:
     runs-on: ubuntu-latest
