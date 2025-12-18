@@ -27,6 +27,9 @@ jobs:
 
       - run: npm ci
 
+      # Build packages (tokens, theme, etc)
+      - run: npm run build
+
       # Build do Storybook no workspace apps/docs
       - run: npm -w apps/docs run build-storybook
 
