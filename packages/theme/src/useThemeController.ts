@@ -36,6 +36,19 @@ export function useThemeController({
         initialState?.mode ?? propMode // Default is "system" from propMode default
     );
 
+    // Sync props to state (Controlled behavior)
+    useEffect(() => {
+        if (propActiveThemeName) {
+            setActiveThemeName(propActiveThemeName);
+        }
+    }, [propActiveThemeName]);
+
+    useEffect(() => {
+        if (propMode) {
+            setMode(propMode);
+        }
+    }, [propMode]);
+
     // 2. System Mode Sync (Client Only)
     const [systemMode, setSystemMode] = useState<ThemeMode>(() => matchSystemMode());
 

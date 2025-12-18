@@ -62,7 +62,7 @@ export const Playground = () => {
                 </Label>
             </div>
 
-            <div style={{ padding: '2rem', border: '1px dashed #ccc', borderRadius: '8px', background: '#f9f9f9', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ padding: '2rem', border: `1px dashed ${token('color.border.muted')}`, borderRadius: '8px', background: token('color.bg.canvas'), display: 'flex', justifyContent: 'center' }}>
                 <div style={style}>
                     <strong>Playground Element</strong>
                     <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', opacity: 0.8 }}>
@@ -71,7 +71,7 @@ export const Playground = () => {
                 </div>
             </div>
 
-            <div style={{ marginTop: '1rem', fontFamily: 'monospace', fontSize: '12px', color: '#666' }}>
+            <div style={{ marginTop: '1rem', fontFamily: 'monospace', fontSize: '12px', color: token('color.text.muted') }}>
                 <div>backgroundColor: {token(semanticColor as any)}</div>
                 <div>borderRadius: {token(radius as any)}</div>
                 <div>padding: {token(space as any)}</div>
@@ -90,6 +90,8 @@ const Label = ({ children }: { children: React.ReactNode }) => (
 const inputStyle = {
     padding: '0.5rem',
     borderRadius: '4px',
-    border: '1px solid #ccc',
+    border: `1px solid ${token('color.border.default')}`,
+    background: token('color.bg.surface'),
+    color: token('color.text.primary'),
     fontFamily: 'inherit'
 };

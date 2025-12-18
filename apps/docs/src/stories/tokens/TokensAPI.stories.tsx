@@ -27,7 +27,7 @@ export const Documentation = () => {
                     <div>
                         <h3>Objeto <code>ds</code></h3>
                         <p>O jeito preferido: oferece autocomplete e previne typos.</p>
-                        <pre style={{ background: '#f4f4f5', padding: '1rem', borderRadius: '8px', overflowX: 'auto' }}>
+                        <pre style={{ background: token('color.bg.surface'), border: `1px solid ${token('color.border.default')}`, padding: '1rem', borderRadius: '8px', overflowX: 'auto' }}>
                             <code>
                                 {`import { ds } from "@ds/tokens/css";
 
@@ -39,7 +39,7 @@ export const Documentation = () => {
                     <div>
                         <h3>Função <code>token()</code></h3>
                         <p>Útil para composição dinâmica de strings.</p>
-                        <pre style={{ background: '#f4f4f5', padding: '1rem', borderRadius: '8px', overflowX: 'auto' }}>
+                        <pre style={{ background: token('color.bg.surface'), border: `1px solid ${token('color.border.default')}`, padding: '1rem', borderRadius: '8px', overflowX: 'auto' }}>
                             <code>
                                 {`import { token } from "@ds/tokens/css";
 
@@ -148,7 +148,7 @@ const ColorGroup = ({ title, tokens }: { title: string, tokens: any[] }) => (
         <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>{title}</h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem' }}>
             {tokens.map((t) => (
-                <div key={t.path} style={{ border: '1px solid #eee', borderRadius: '8px', padding: '0.5rem', background: t.bg || 'transparent' }}>
+                <div key={t.path} style={{ border: `1px solid ${token('color.border.muted')}`, borderRadius: '8px', padding: '0.5rem', background: t.bg || 'transparent' }}>
                     <div style={{
                         height: '48px',
                         background: t.value,
@@ -159,7 +159,7 @@ const ColorGroup = ({ title, tokens }: { title: string, tokens: any[] }) => (
                     }}></div>
                     <div style={{ fontSize: '12px', fontFamily: 'monospace' }}>
                         <div style={{ fontWeight: 'bold' }}>{t.path}</div>
-                        <div style={{ color: '#666' }}>{t.value}</div>
+                        <div style={{ color: token('color.text.muted') }}>{t.value}</div>
                     </div>
                 </div>
             ))}
@@ -169,7 +169,7 @@ const ColorGroup = ({ title, tokens }: { title: string, tokens: any[] }) => (
 
 const TypographySample = ({ label, style }: { label: string, style: React.CSSProperties }) => (
     <div>
-        <span style={{ fontSize: '10px', color: '#999', display: 'block', marginBottom: '0.25rem' }}>{label}</span>
+        <span style={{ fontSize: '10px', color: token('color.text.muted'), display: 'block', marginBottom: '0.25rem' }}>{label}</span>
         <div style={style}>The quick brown fox jumps over the lazy dog.</div>
     </div>
 );
