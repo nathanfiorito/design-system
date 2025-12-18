@@ -99,7 +99,14 @@ const styles = {
 
 ## Arquitetura do Pacote
 
-### Estrutura de Pastas
+### Estrutura de Pastas e Distribuição
+
+O pacote é compilado para a pasta `dist` e utiliza o campo `exports` no `package.json` para garantir imports limpos e modernos.
+
+*   `dist/index.js`: Bundle principal (CommonJS/ESM hybrid compatibility)
+*   `dist/index.d.ts`: Declarações de tipo
+
+A estrutura fonte (`src`) permanece:
 
 *   `src/contracts`: Define as interfaces TypeScript (`Theme`, `ColorScale`, etc.) que garantem consistência.
 *   `src/primitives`: Contém as escalas de valores (Palette, Space, Radius, Shadow, Typography).

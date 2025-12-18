@@ -8,6 +8,9 @@ O pacote `@ds/theme` é responsável por gerenciar a aplicação de temas, contr
 pnpm add @ds/theme @ds/tokens
 ```
 
+> **Nota Técnica:** O pacote expõe seus artefatos via `exports` no `package.json`. Certifique-se de que seu bundler suporta resolução moderna (Node 16+ resolution).
+
+
 ## Setup Básico
 
 Envolva sua aplicação com o `ThemeProvider`. Em Next.js (App Router), isso geralmente é feito no `layout.tsx` raiz.
