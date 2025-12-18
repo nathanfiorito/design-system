@@ -1,21 +1,27 @@
 {
     "name": "@ds/ui",
     "version": "0.0.1",
-    "main": "dist/index.js",
-    "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "sideEffects": [
         "**/*.css"
     ],
     "exports": {
-        ".": "./dist/index.js",
-        "./foundations": "./dist/foundations/index.js"
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        },
+        "./foundations": {
+            "types": "./dist/foundations/index.d.ts",
+            "default": "./dist/foundations/index.js"
+        }
     },
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "tsc -p tsconfig.json"
+        "build": "tsc -p tsconfig.json && cp src/foundations/*.css dist/foundations/"
     },
     "devDependencies": {
         "typescript": "^5.0.0"
